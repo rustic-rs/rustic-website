@@ -1,0 +1,42 @@
+<html class="dark" id="oranda" lang="en"><head><title>rustic</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta name="description"/><meta name="description"/><meta property="og:description"/><meta content="website" property="og:type"/><meta content="My Axo project" property="og:title"/><meta content="interest-cohort=()" http_equiv="Permissions-Policy"/><link href="oranda.css" rel="stylesheet"/></head><body><div class="container"><main><header><h1 class="title">rustic</h1></header><div><h1>a fast, encrypted, deduplicated backup tool powered by Rust</h1>
+<p><a href="https://crates.io/crates/rustic-rs" rel="noopener noreferrer"><img src="https://img.shields.io/crates/v/rustic-rs.svg" alt="crate"></a>
+<p>rustic is a backup tool that provides fast, encrypted, deduplicated backups written in <a href="https://www.rust-lang.org/" rel="noopener noreferrer">Rust</a>.
+It reads and writes the <a href="https://github.com/restic/restic" rel="noopener noreferrer">restic</a> repo format described in the <a href="https://github.com/restic/restic/blob/master/doc/design.rst" rel="noopener noreferrer">design document</a>
+and can be used as a restic replacement in most cases.</p>
+<p>Rustic supports the major operating systems (Linux, MacOs, *BSD), Windows support is experimental.</p>
+<p>Note that rustic currently is in a beta release and misses regression tests.</p>
+<p>You can ask questions in the <a href="https://github.com/rustic-rs/rustic/discussions" rel="noopener noreferrer">Discussions</a> or have a look at the <a href="docs/FAQ.md" rel="noopener noreferrer">FAQ</a></p>
+<h2>Features</h2>
+<ul>
+<li>Backup data is deduplicated and encrypted.</li>
+<li>Backup storage can be local or cloud storages, including cold storages.</li>
+<li>Allows multiple clients to concurrently access a backup repository using lock-free operations.</li>
+<li>Backups by default are append-only on the repository.</li>
+<li>The operations are robustly designed and can be safely aborted and efficiently resumed.</li>
+<li>Snapshot organization is possible by hostname, backup paths, label and tags. Also a rich set of metadata is saved with each snapshot.</li>
+<li>Retention policies and cleaning of old backups can be highly customized.</li>
+<li>Follow-up backups only process changed files, but still create a complete backup snapshot.</li>
+<li>In-place restore only modifies files which are changed.</li>
+<li>Can use config files for easy configuration of all every-day commands, see <a href="config/" rel="noopener noreferrer">example config files</a>.</li>
+</ul>
+<h2>Quick start</h2>
+<img src="https://github.com/rustic-rs/rustic/blob/main/docs/screenshots/rustic.png">
+<img src="https://github.com/rustic-rs/rustic/blob/main/docs/screenshots/rustic-restore.png">
+<h2>Are binaries available?</h2>
+<p>Sure. Check out the <a href="https://github.com/rustic-rs/rustic/releases" rel="noopener noreferrer">releases</a>.
+Binaries for the latest development version are available <a href="https://github.com/rustic-rs/rustic-beta" rel="noopener noreferrer">here</a>.</p>
+<h2>What is the difference between rustic and restic?</h2>
+<p>See the <a href="docs/comparison-restic.md" rel="noopener noreferrer">Comparison between rustic and restic</a>.</p>
+<h2>License</h2>
+<p>Licensed under either of:</p>
+<ul>
+<li><a href="./LICENSE-APACHE" rel="noopener noreferrer">Apache License, Version 2.0</a></li>
+<li><a href="./LICENSE-MIT" rel="noopener noreferrer">MIT license</a></li>
+</ul>
+<p>at your option.</p>
+<h3>Contribution</h3>
+<p>Contributions in form of <a href="https://github.com/rustic-rs/rustic/issues/new/choose" rel="noopener noreferrer">issues</a> or PRs are very welcome.</p>
+<p>Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
+dual licensed as above, without any additional terms or conditions.</p>
+</div></main><footer class="footer"><span>My Axo project</span></footer></div></body></html>
