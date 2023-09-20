@@ -5,7 +5,7 @@ weight = 1
 +++
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/rustic-rs/assets/main/logos/readme_header.png" height="400" />
+<img class="content-logo" src="https://raw.githubusercontent.com/rustic-rs/assets/main/logos/readme_header.png" />
 </p>
 <p align="center"><b>fast, encrypted, and deduplicated backups</b></p>
 
