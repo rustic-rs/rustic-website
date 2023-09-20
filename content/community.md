@@ -1,6 +1,6 @@
 +++
-title = "Contact"
-description = "📞 Contact"
+title = "Community"
+description = "📣 Community"
 weight = 99
 +++
 
