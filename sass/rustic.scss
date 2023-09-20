@@ -1,3 +1,13 @@
+.header-menu {
+    background-color: var(--primary-color);
+    padding: 5px;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+    border-bottom: var(--shadow-color) 1px solid;
+    box-shadow: 0 2px 10px 2px var(--shadow-color);
+}
+
 .content-logo {
     height: 350px;
     width: auto;
