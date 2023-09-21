@@ -8,14 +8,10 @@
     box-shadow: 0 2px 10px 2px var(--shadow-color);
 }
 
-.navbar {
-    margin-right: 2.5em;
-}
-
 .navbar div {
     float: left;
     padding: 0.5em;
-    margin: 0.5em;
+    margin-bottom: 0.5em;
     font-size: 1.2em;
     font-weight: bold;
     color: var(---secondary-color);
@@ -53,6 +49,13 @@
     vertical-align: middle;
 }
 
+@media (max-width: 800px) {
+    .flex-row {
+        flex: 75%;
+        max-width: 75%;
+    }
+}
+
 @media (max-width: 600px) {
     .flex-row {
         flex: 50%;
@@ -60,11 +63,18 @@
     }
 }
 
+@media (max-width: 450px) {
+    .flex-row {
+        flex: 30%;
+        max-width: 100%;
+    }
+}
+
 div.ecosystem-gallery {
     margin: 0.2em;
     border: 0.1em solid #ccc;
     float: left;
-    width: 10em;
+    width: 9em;
     height: 15em;
 }
 
