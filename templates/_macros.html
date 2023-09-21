@@ -1,27 +1,75 @@
 {% macro render_header() %}
 {% set section = get_section(path="_index.md") %}
-<a href="{{ section.permalink | safe }}">
-    <div class="logo">
-        <img src="{{ get_url(path=config.extra.juice_logo_path) }}" alt="logo">
-        {{ config.extra.juice_logo_name }}
-    </div>
-</a>
+<div class="navbar-logo">
+    <a href="{{ section.permalink | safe }}">
+        <img src="{{ get_url(path=config.extra.rustic_logo_path) }}" alt="logo" /> {{ config.extra.rustic_logo_name }}
+    </a>
+</div>
 
-<nav class="navbar">
-    {% for page in section.pages %}
-    {% set exclude_menu = config.extra.juice_exclude_menu | default(value=[]) %}
-    {% if exclude_menu is not containing(page.title) %}
-    <a class="nav-item subtitle-text" href="{{ page.permalink | safe }}">
-        <div>{{ page.title }}</div>
-    </a>
-    {% endif %}
-    {% endfor %}
-    {% if config.extra.juice_extra_menu %}
-    {% for menu in config.extra.juice_extra_menu %}
-    <a class="nav-item subtitle-text" href="{{ menu.link | safe }}">
-        <div>{{ menu.title }}</div>
-    </a>
-    {% endfor %}
-    {% endif %}
+<nav>
+
+    <div class="menu-items">
+        {% for page in section.pages %}
+        {% set exclude_menu = config.extra.rustic_exclude_menu | default(value=[]) %}
+        {% if exclude_menu is not containing(page.title) %}
+        <div class="nav-item">
+            <a class="subtitle-text" href="{{ page.permalink | safe }}">
+                <p>{{ page.title }}</p>
+            </a>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% if config.extra.rustic_extra_menu %}
+        {% for menu in config.extra.rustic_extra_menu %}
+        <div class="nav-item">
+            <a class="subtitle-text" href="{{ menu.link | safe }}">
+                <p>{{ menu.title }}</p>
+            </a>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <div class="menu-items-hamburger">
+        {% for page in section.pages %}
+        {% set exclude_menu = config.extra.rustic_exclude_menu | default(value=[]) %}
+        {% if exclude_menu is not containing(page.title) %}
+        <div class="nav-item">
+            <a class="subtitle-text" href="{{ page.permalink | safe }}">
+                <p>{{ page.title }}</p>
+            </a>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% if config.extra.rustic_extra_menu %}
+        {% for menu in config.extra.rustic_extra_menu %}
+        <div class="nav-item">
+            <a class="subtitle-text" href="{{ menu.link | safe }}">
+                <p>{{ menu.title }}</p>
+            </a>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <div class="hamburger">
+        <div class="hamburg">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </div>
+    <script>
+        var hamburger = document.querySelector(".hamburg");
+        var hamburger_menu = document.querySelector(".hamburger");
+        var menu_items_hamburger = document.querySelector(".menu-items-hamburger");
+        hamburger_menu.onclick = function () {
+            hamburger.classList.toggle("checked");
+            if (hamburger.classList.contains("checked")) {
+                menu_items_hamburger.setAttribute("style", "display: flex;");
+            } else {
+                menu_items_hamburger.setAttribute("style", "display: none;");
+            }
+        }
+    </script>
+
 </nav>
 {% endmacro render_header %}

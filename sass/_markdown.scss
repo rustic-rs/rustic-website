@@ -1,45 +1,90 @@
 .content {
-  padding: 0 40px;
   display: flex;
-  flex-direction: column;
-  overflow-x: auto;
-}
+  flex-flow: column wrap;
+  // FIXME: is this needed?
+  // overflow-x: auto;
+  word-wrap: break-word;
+  margin: var(--size-3) var(--size-2) var(--size-000) var(--size-3);
 
-.content pre {
-  overflow-x: auto;
-  padding: 1.25em 1.5em;
-  white-space: pre;
-  word-wrap: normal;
-  background-color: var(--code-background-color);
-  color: var(--code-color);
-  font-size: .875em;
-  font-family: monospace;
-}
-
-.content code {
-  background-color: var(--code-background-color);
-  color: var(--code-color);
-  font-size: .875em;
-  font-weight: normal;
-  padding: 0.25em 0.5em;
-  font-family: monospace;
-}
-
-.content pre code {
-  padding: 0;
-}
-
-.content a {
-  color: var(--primary-link-color);
-
-  &:hover {
-    text-decoration: underline;
+  * {
+    word-wrap: break-word;
   }
-}
 
-.content blockquote {
-  border-left: #e2dede 8px solid;
-  margin: 0;
-  background-color: #f2f1f0;
-  padding: 0 20px;
+  ul {
+    margin: var(--size-1) var(--size-1) var(--size-3) var(--size-1);
+    padding-left: var(--size-3);
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
+  p {
+    display: block;
+    margin: var(--size-1) var(--size-1) var(--size-3) var(--size-1);
+
+    >img {
+      height: auto;
+    }
+  }
+
+  h1,
+  h2 {
+    font-family: var(--header-font-family);
+    font-weight: var(--font-weight-7);
+    color: var(--primary-text-color);
+    margin: var(--size-1) var(--size-1) var(--size-3) var(--size-1);
+
+  }
+
+  >h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--header-font-family);
+    font-weight: var(--font-weight-4);
+    font-size: var(--font-size-2);
+    color: var(--primary-text-color);
+    margin: var(--size-1) var(--size-1) var(--size-3) var(--size-1);
+
+  }
+
+  pre {
+    overflow-x: auto;
+    padding: var(--size-3) var(--size-4);
+    white-space: pre;
+    word-wrap: normal;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    font-size: var(--font-size-1);
+    font-family: monospace;
+    border-radius: var(--size-1);
+    margin: var(--size-1) var(--size-1) var(--size-3) var(--size-1);
+  }
+
+  code {
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    font-size: .875em;
+    font-weight: normal;
+    padding: 0.25em 0.5em;
+    font-family: monospace;
+  }
+
+  pre code {
+    padding: 0;
+  }
+
+  a {
+    color: var(--primary-link-color);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  blockquote {
+    border-left: #e2dede 8px solid;
+    margin: 0;
+    background-color: #f2f1f0;
+    padding: 0 20px;
+  }
 }

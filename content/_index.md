@@ -7,36 +7,7 @@ sort_by = "weight"
 
 The *rustic* ecosystem currently consists of the following products:
 
-<div class="flex-row">
-        <div class="ecosystem-gallery">
-            <a href="ecosystem/rustic"><img src="https://raw.githubusercontent.com/rustic-rs/assets/main/logos/readme_header.png" height="150" /></a>
-            <div class="desc">rustic</div>
-            <div class="desc-sub">deduplicated, encrypted backups</div>
-        </div>
-        <div class="ecosystem-gallery">
-            <a href="ecosystem/rustic-scheduler"><img src="https://raw.githubusercontent.com/rustic-rs/assets/main/logos/readme_header_scheduler.png" height="150" /></a>
-            <div class="desc">rustic scheduler</div>
-            <div class="desc-sub">centrally schedule rustic backups</div>
-        </div>
-        <div class="ecosystem-gallery">
-            <a href="ecosystem/rustic-server"><img src="https://raw.githubusercontent.com/rustic-rs/assets/main/logos/readme_header_server.png" height="150" /></a>
-            <div class="desc">rustic server</div>
-            <div class="desc-sub">a REST server for rustic and restic</div>
-        </div>
-        <div class="ecosystem-gallery">
-            <a href="ecosystem/rustic-core"><img src="https://raw.githubusercontent.com/rustic-rs/assets/main/logos/readme_header_core.png" height="150" /></a>
-            <div class="desc">rustic core</div>
-            <div class="desc-sub">the library powering rustic</div>
-        </div>
-        <div class="ecosystem-gallery">
-            <a href="https://rustic.cli.rs/docs" target="_blank"><img src="https://raw.githubusercontent.com/rustic-rs/assets/main/logos/readme_header_docs.png" height="150" /></a>
-            <div class="desc">User Documentation</div>
-        </div>
-        <div class="ecosystem-gallery">
-            <a href="https://rustic.cli.rs/dev-docs" target="_blank"><img src="https://raw.githubusercontent.com/rustic-rs/assets/main/logos/readme_header_dev.png" height="150" /></a>
-            <div class="desc">Developer Documentation</div>
-        </div>
-</div>
+{{ gallery(path = "products.toml") }}
 
 # Contributing
 

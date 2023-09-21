@@ -9,8 +9,6 @@ compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
-theme = "juice"
-
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
@@ -18,11 +16,11 @@ highlight_code = true
 highlight_theme = "inspired-github"
 
 [extra]
-juice_logo_name = "rustic"
-juice_logo_path = "rustic.svg"
-juice_extra_menu = [
+rustic_logo_name = "rustic"
+rustic_logo_path = "rustic.svg"
+rustic_extra_menu = [
     # { title = "Github", link = "https://github.com/rustic-rs/" },
 ]
 # Add page titles here to exclude them from the nav section (case sensitive)
-juice_exclude_menu = [""]
+rustic_exclude_menu = [""]
 repository_url = "https://github.com/rustic-rs/rustic-rs.github.io "
