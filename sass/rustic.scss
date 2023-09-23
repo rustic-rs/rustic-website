@@ -367,7 +367,19 @@ a {
 
     .content {
         max-width: 80%;
-        min-width: var(--size-content-3);
+
+        pre {
+            max-width: fit-content;
+        }
+
+        p {
+            display: block;
+            max-width: fit-content;
+        }
+
+        ul>li {
+            max-width: fit-content;
+        }
     }
 }
 
