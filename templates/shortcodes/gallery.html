@@ -6,7 +6,7 @@
         <div class="ecosystem-gallery">
             <img src="{{ item.image }}" />
             <div class="desc">{{ item.title }}</div>
-            {% if item.subtitle %}
+            {% if item.subtitle is defined %}
             <div class="desc-sub">{{ item.subtitle | trim}}</div>
             {% endif %}
         </div>
