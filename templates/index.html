@@ -22,10 +22,13 @@
 </head>
 
 <body class="layout">
-    <header class="header-menu">
-        {% block header %}
-        {{ macros::render_header() }}
-        {% endblock header %}
+    <header>
+        <div class="header-menu">
+            {% block header %}
+            {{ macros::render_header() }}
+            {% endblock header %}
+        </div>
+
     </header>
     <main>
         {% block hero %}

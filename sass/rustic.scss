@@ -3,19 +3,26 @@
 @import "_markdown.scss";
 @import "_open-props.scss";
 
+html {
+    scroll-padding-top: var(--size-10);
+}
+
 .layout {
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
 }
 
-.header-menu {
-    position: fixed;
+header {
+    position: sticky;
     top: 0;
-    width: 100%;
     z-index: var(--layer-important);
+}
+
+.header-menu {
     display: flex;
+    grid-area: 1;
     align-items: center;
     background-color: var(--primary-color);
     justify-content: space-between;
@@ -146,7 +153,6 @@
     align-items: center;
     background-color: var(--primary-color);
     justify-content: center;
-    padding-top: var(--size-8);
     padding-left: var(--size-5);
     padding-right: var(--size-5);
 
@@ -202,10 +208,10 @@
 }
 
 .main-content {
+    grid-area: 2;
     background-color: var(--grey-6);
     display: flex;
     flex-direction: row;
-    padding-top: var(--size-10);
     margin-bottom: var(--size-5);
 
     .content {
@@ -273,6 +279,7 @@
 
 
 footer {
+    grid-area: 3;
     display: block;
     text-align: center;
     background-color: var(--primary-color);
