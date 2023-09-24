@@ -65,7 +65,7 @@
             </div>
         </section>
         {% endblock hero %}
-        <section class="main-content" id="features">
+        <section class="main-content">
             {% block main %}
             {% block toc %}
             {% if section.toc %}
@@ -93,7 +93,7 @@
             {% endif %}
             {% endblock toc %}
 
-            <div class="content text">
+            <div class="content text" id="features">
                 {% block content %}
                 <div class="heading-text">Overview</div>
                 {{ section.content | safe }}

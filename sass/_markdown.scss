@@ -4,22 +4,37 @@
   // FIXME: is this needed?
   // overflow-x: auto;
   word-wrap: break-word;
-  margin: var(--size-3) var(--size-2) var(--size-000) var(--size-3);
+  margin: var(--size-3) 0 var(--size-000) 0;
 
   * {
     word-wrap: break-word;
   }
 
+  // FIXME: Is this needed?
   ul {
-    margin: var(--size-1) var(--size-1) var(--size-3) var(--size-1);
-    padding-left: var(--size-3);
-    list-style-type: disc;
-    list-style-position: inside;
+    max-width: 80vw;
   }
+
+  //   margin: var(--size-1) var(--size-1) var(--size-3) var(--size-1);
+  //   padding-left: var(--size-3);
+  //   max-width: var(--size-content-3);
+  //   // list-style-type: disc;
+  //   // list-style-position: inside;
+  //   display: block;
+
+  //   li {
+  //     display: inline-block;
+
+  //     p {
+  //       display: list-item;
+  //     }
+  //   }
+  // }
 
   p {
     display: block;
     margin: var(--size-1) var(--size-1) var(--size-3) var(--size-1);
+    max-width: 90vw;
 
     >img {
       height: auto;
@@ -69,8 +84,12 @@
     font-family: monospace;
   }
 
-  pre code {
-    padding: 0;
+  pre {
+    max-width: 90vw;
+
+    code {
+      padding: 0;
+    }
   }
 
   a {
