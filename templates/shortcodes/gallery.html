@@ -5,7 +5,9 @@
         <div class="ecosystem-gallery">
             <img src="{{ item.image }}" />
             <div class="desc">{{ item.title }}</div>
+            {% if item.subtitle %}
             <div class="desc-sub">{{ item.subtitle }}</div>
+            {% endif %}
         </div>
     </a>
     {% endfor %}

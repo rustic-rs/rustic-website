@@ -283,6 +283,12 @@ footer {
 
     a {
         color: var(--primary-text-color);
+    }
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
         text-decoration: none;
     }
 }
