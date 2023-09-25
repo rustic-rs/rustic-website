@@ -14,7 +14,7 @@
         {% if exclude_menu is not containing(page.title) %}
         <div class="nav-item">
             <a class="subtitle-text" href="{{ page.permalink | safe }}">
-                <p>{{ page.title }}</p>
+                {{ page.title }}
             </a>
         </div>
         {% endif %}
@@ -23,7 +23,7 @@
         {% for menu in config.extra.rustic_extra_menu %}
         <div class="nav-item">
             <a class="subtitle-text" href="{{ menu.link | safe }}">
-                <p>{{ menu.title }}</p>
+                {{ menu.title }}
             </a>
         </div>
         {% endfor %}
@@ -35,7 +35,7 @@
         {% if exclude_menu is not containing(page.title) %}
         <div class="nav-item">
             <a class="subtitle-text" href="{{ page.permalink | safe }}">
-                <p>{{ page.title }}</p>
+                {{ page.title }}
             </a>
         </div>
         {% endif %}
@@ -44,7 +44,7 @@
         {% for menu in config.extra.rustic_extra_menu %}
         <div class="nav-item">
             <a class="subtitle-text" href="{{ menu.link | safe }}">
-                <p>{{ menu.title }}</p>
+                {{ menu.title }}
             </a>
         </div>
         {% endfor %}

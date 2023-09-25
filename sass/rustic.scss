@@ -31,7 +31,7 @@ header {
     justify-content: space-between;
     border-bottom: var(--shadow-color) var(--border-size-2) solid;
     box-shadow: var(--shadow-4);
-    max-height: var(--size-9);
+    height: var(--size-9);
 
     .navbar-logo {
         font-family: "Alfa Slab One", serif;
@@ -121,7 +121,9 @@ header {
                 padding: 0 var(--size-fluid-3) 0 var(--size-fluid-3);
                 font-weight: var(--font-weight-9);
                 width: 100%;
-                max-height: max-content;
+                height: var(--size-8);
+                display: flex;
+                align-items: center;
 
                 &:hover {
                     text-decoration: underline;
@@ -133,6 +135,7 @@ header {
         }
 
         .menu-items {
+            flex-flow: row;
             text-decoration: none;
             font-weight: var(--font-weight-9);
 
@@ -140,10 +143,13 @@ header {
                 padding: 0 var(--size-fluid-2) 0 var(--size-fluid-2);
 
                 &:hover {
-                    text-decoration: underline;
-                    background-color: var(--secondary-color);
+                    background-color: var(--gray-6);
                     border-radius: var(--border-size-3);
-                    transition: 0.3s;
+                    transition: 0.7s;
+
+                    a:hover {
+                        color: var(--gray-12);
+                    }
                 }
             }
         }
@@ -564,6 +570,10 @@ a {
     .flex-row {
         flex-direction: column;
         align-items: center;
+    }
+
+    .menu-items {
+        display: none;
     }
 
     .hero {
