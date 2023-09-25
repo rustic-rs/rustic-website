@@ -1,5 +1,5 @@
 +++
-title = "Docs"
+title = "Learn"
 description = "📚 Documentation"
 weight = 2
 +++
