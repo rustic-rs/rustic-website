@@ -19,15 +19,15 @@ fast, encrypted, and deduplicated backups
 
 # About
 
-*rustic* is a backup tool that provides fast, encrypted, deduplicated backups.
+_rustic_ is a backup tool that provides fast, encrypted, deduplicated backups.
 
 It reads and writes the [restic][1] repo format described in the
-[design document][2] and can be used as a *restic* replacement in most cases.
+[design document][2] and can be used as a _restic_ replacement in most cases.
 
 It is implemented in [Rust](https://www.rust-lang.org/), a performant,
 memory-efficient, and reliable cross-platform systems programming language.
 
-Hence *rustic* supports all major operating systems (Linux, MacOs, *BSD), with
+Hence _rustic_ supports all major operating systems (Linux, MacOs, *BSD), with
 Windows support still being experimental.
 
 # Features
@@ -48,9 +48,9 @@ Windows support still being experimental.
 - Uses config files for easy configuration of all every-day commands, see
   [example config files](https://github.com/rustic-rs/rustic/tree/main/config).
 
-# Differences to *restic*
+# Differences to _restic_
 
-We have collected some improvements of *rustic* over *restic*
+We have collected some improvements of _rustic_ over _restic_
 [here](https://rustic.cli.rs/docs/comparison-restic.html).
 
 # Installation

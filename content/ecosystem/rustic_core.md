@@ -20,10 +20,10 @@ in_search_index = true
 
 This library is powering [rustic-rs](https://crates.io/crates/rustic-rs). A
 backup tool that provides fast, encrypted, deduplicated backups. It reads and
-writes the *restic* repository format, which is described in their design
+writes the _restic_ repository format, which is described in their design
 document.
 
-**Note**: *rustic_core* is in an early development stage and its API is subject
+**Note**: _rustic_core_ is in an early development stage and its API is subject
 to change in the next releases. If you want to give feedback on that, please
 open a thread in our
 [discussions](https://github.com/rustic-rs/rustic/discussions).
@@ -41,14 +41,14 @@ rustic_core = "0.1"
 
 This crate exposes a few features for controlling dependency usage:
 
-- **cli** - Enables support for CLI features by enabling *merge* and *clap*
-  features. *This feature is disabled by default*.
+- **cli** - Enables support for CLI features by enabling _merge_ and _clap_
+  features. _This feature is disabled by default_.
 - **merge** - Enables support for merging multiple values into one, which
-  enables the *merge* dependency. This is needed for parsing commandline
-  arguments and merging them into one (e.g. *config*). *This feature is disabled
-  by default*.
-- **clap** - Enables a dependency on the *clap* crate and enables parsing from
-  the commandline. *This feature is disabled by default*.
+  enables the _merge_ dependency. This is needed for parsing commandline
+  arguments and merging them into one (e.g. _config_). _This feature is disabled
+  by default_.
+- **clap** - Enables a dependency on the _clap_ crate and enables parsing from
+  the commandline. _This feature is disabled by default_.
 
 # Examples
 

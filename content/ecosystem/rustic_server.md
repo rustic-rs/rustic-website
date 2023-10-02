@@ -33,7 +33,7 @@ Most features are already implemented.
 
 ## From binaries
 
-*rustic-server* is in an early development stage. Please use the nightly builds from [here](https://rustic.cli.rs/docs/nightly_builds.html).
+_rustic-server_ is in an early development stage. Please use the nightly builds from [here](https://rustic.cli.rs/docs/nightly_builds.html).
 
 # Features
 

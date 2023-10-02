@@ -5,7 +5,7 @@ sort_by = "weight"
 
 # Ecosystem
 
-The *rustic* ecosystem currently consists of the following products:
+The _rustic_ ecosystem currently consists of the following products:
 
 {{ gallery(path = "products.toml") }}
 

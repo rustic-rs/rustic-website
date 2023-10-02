@@ -23,26 +23,26 @@ in_search_index = true
 
 # About
 
-*rustic scheduler* is a client/server application to schedule regular backups on
+_rustic scheduler_ is a client/server application to schedule regular backups on
 many clients to one identical repository controlled by a central scheduling
 server.
 
 It allows to define client groups which are all backed up the same way.
 
-**Note**:  *rustic scheduler* is in an early development stage.
+**Note**: _rustic scheduler_ is in an early development stage.
 
 # Installation
 
 ## From binaries
 
-*rustic-scheduler* is in an early development stage. Please use the nightly builds from [here](https://rustic.cli.rs/docs/nightly_builds.html).
+_rustic-scheduler_ is in an early development stage. Please use the nightly builds from [here](https://rustic.cli.rs/docs/nightly_builds.html).
 
 # Getting started
 
-- Copy the *rustic-scheduler-server* binary to your backup schedule server and
-  the *rustic-scheduler-client* binary to all your clients.
+- Copy the _rustic-scheduler-server_ binary to your backup schedule server and
+  the _rustic-scheduler-client_ binary to all your clients.
 - Create a config file [rustic_schedulder.toml](https://raw.githubusercontent.com/rustic-rs/rustic_scheduler/main/config/rustic_scheduler.toml) on your backup schedule server.
-- Run the *rustic-scheduler-server* binary on your server in the dir containing
+- Run the _rustic-scheduler-server_ binary on your server in the dir containing
   the config.
 - On each client, run
 
@@ -56,7 +56,7 @@ It allows to define client groups which are all backed up the same way.
   ```
   rustic-scheduler-client http://server.localdomain:3012/ws
   ```
-  
+
 - Backups on your clients are automatically started based on the configured
   schedule(s).
 

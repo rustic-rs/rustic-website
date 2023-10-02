@@ -4,6 +4,6 @@ description = "📚 Documentation"
 weight = 2
 +++
 
-To help you find your way around the *rustic ecosystem*, we have compiled the following resources:
+To help you find your way around the _rustic ecosystem_, we have compiled the following resources:
 
 {{ gallery(path = "doc-resources.toml") }}
