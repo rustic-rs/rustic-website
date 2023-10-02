@@ -25,4 +25,4 @@ rustic_extra_menu = [
 ]
 # Add page titles here to exclude them from the nav section (case sensitive)
 rustic_exclude_menu = [""]
-repository_url = "https://github.com/rustic-rs/rustic-rs.github.io "
+repository_url = "https://github.com/rustic-rs/rustic-rs.github.io"
