@@ -7,16 +7,14 @@
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% block favicon %}
-    <link rel="icon" type="image/png" href="/favicon.ico">
+    <link rel="icon" type="image/svg" href="./assets/rustic.svg">
     {% endblock favicon %}
     {% include "_variables.html" %}
     {% block fonts %}
-    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ get_url(path='fonts.css') }}">
     {% endblock fonts %}
     <link rel="stylesheet" href="{{ get_url(path='rustic.css') }}">
-    <link rel="stylesheet" href="/font-awesome.css">
-    <script async defer src="./buttons.js"></script>
+    <script async defer src="./js/buttons.js"></script>
     {% block head %}
     {% endblock head %}
 </head>
@@ -34,7 +32,7 @@
         {% block hero %}
         <section class="hero">
             <picture class="hero-image">
-                <img src="{{ get_url(path='rustic.svg') }}">
+                <img src="{{ get_url(path='./assets/rustic.svg') }}">
             </picture>
             <div class="hero-message">
                 Backups how they should be.
