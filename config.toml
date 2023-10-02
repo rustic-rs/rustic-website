@@ -17,7 +17,7 @@ highlight_theme = "inspired-github"
 
 [extra]
 rustic_logo_name = "rustic"
-rustic_logo_path = "./assets/rustic.svg"
+rustic_logo_path = "assets/rustic.svg"
 rustic_extra_menu = [
     # { title = "Github", link = "https://github.com/rustic-rs/" },
 ]
