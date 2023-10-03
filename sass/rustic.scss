@@ -131,6 +131,12 @@ header {
                     border-radius: var(--border-size-3);
                     transition: 0.3s;
                 }
+
+                a:active,
+                a:visited {
+                    text-decoration: none;
+                    color: var(--white);
+                }
             }
         }
 
