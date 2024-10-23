@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>rustic - fast, encrypted, and deduplicated backups</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="icon" type="image/svg" href="https://rustic.cli.rs/assets/rustic.svg">
+    
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #FEB33F;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        --primary-text-color-over: #000;
+        /* Primary theme link color */
+        --primary-link-color: #d09a07;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #d46e13;
+        --toc-background-color: white;
+        --code-color: #4a4a4a;
+        --code-background-color: white;
+
+        --shadow-color: #7a7a7a;
+
+        /* Font used for headers (h1 & h2) */
+        --header-font-family: "Fira Sans", sans-serif;
+        /* Font used for text */
+        --text-font-family: "Fira Sans", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --primary-color: #382929;
+            --primary-text-color: #d7d7d7;
+            --primary-text-color-over: #FFF;
+            --primary-link-color: #9b9b9b;
+            --secondary-color: #282828;
+            --secondary-text-color: #f2f2f2;
+            --navbar-background-color-hover: #362525;
+            --toc-highlight-text-color: #f2f2f2;
+            --toc-background-color: #3a3a3a;
+            --code-color: black;
+            --code-background-color: white;
+
+            --shadow-color: #202020;
+            --header-font-family: "Fira Sans", sans-serif;
+            --text-font-family: "Fira Sans", sans-serif;
+        }
+    }
+</style>
+    
+    <link rel="stylesheet" href="https://rustic.cli.rs/fonts.css">
+    
+    <link rel="stylesheet" href="https://rustic.cli.rs/rustic.css">
+    <script async defer src="https://rustic.cli.rs/js/buttons.js"></script>
+    
+    
+</head>
+
+<body class="layout">
+    <header>
+        <div class="header-menu">
+            
+            
+
+<div class="navbar-logo">
+    <a href="https://rustic.cli.rs/">
+        <img src="https://rustic.cli.rs/assets/rustic.svg" alt="logo" /> rustic
+    </a>
+</div>
+
+<nav>
+
+    <div class="menu-items">
+        
+        
+        
+        <div class="nav-item">
+            <a class="subtitle-text" href="https://rustic.cli.rs/learn/">
+                Learn
+            </a>
+        </div>
+        
+        
+        
+        
+        <div class="nav-item">
+            <a class="subtitle-text" href="https://rustic.cli.rs/community/">
+                Community
+            </a>
+        </div>
+        
+        
+        
+    </div>
+    <div class="menu-items-hamburger">
+        
+        
+        
+        <div class="nav-item">
+            <a class="subtitle-text" href="https://rustic.cli.rs/learn/">
+                Learn
+            </a>
+        </div>
+        
+        
+        
+        
+        <div class="nav-item">
+            <a class="subtitle-text" href="https://rustic.cli.rs/community/">
+                Community
+            </a>
+        </div>
+        
+        
+        
+    </div>
+    <div class="hamburger">
+        <div class="hamburg">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </div>
+    <script>
+        var hamburger = document.querySelector(".hamburg");
+        var hamburger_menu = document.querySelector(".hamburger");
+        var menu_items_hamburger = document.querySelector(".menu-items-hamburger");
+        hamburger_menu.onclick = function () {
+            hamburger.classList.toggle("checked");
+            if (hamburger.classList.contains("checked")) {
+                menu_items_hamburger.setAttribute("style", "display: flex;");
+            } else {
+                menu_items_hamburger.setAttribute("style", "display: none;");
+            }
+        }
+    </script>
+
+</nav>
+
+            
+        </div>
+
+    </header>
+    <main>
+        
+        <section class="hero">
+            <picture class="hero-image">
+                <img src="https://rustic.cli.rs/assets/rustic.svg">
+            </picture>
+            <div class="hero-message">
+                Backups how they should be.
+            </div>
+            <div class="under-hero">
+                The <i>rustic</i> ecosystem contains various tools that make creating backups easier for you.
+            </div>
+            <div class="gh-buttons">
+                <a class="github-button" href="https://github.com/rustic-rs/rustic/discussions"
+                    data-color-scheme="dark: dark;" data-icon="octicon-comment-discussion" data-size="large"
+                    aria-label="Discuss on GitHub" target=”_blank”>Discuss</a>
+                <a class="github-button" href="https://github.com/rustic-rs/rustic/issues"
+                    data-color-scheme="dark: dark;" data-icon="octicon-issue-opened" data-size="large"
+                    aria-label="Issue on GitHub" target=”_blank”>Issue</a>
+                <a class="github-button" href="https://github.com/rustic-rs/rustic/releases"
+                    data-color-scheme="dark: dark;" data-icon="octicon-download" data-size="large"
+                    aria-label="Download rustic" target=”_blank”>Download</a>
+                <a class="github-button" href="https://github.com/rustic-rs/rustic" data-color-scheme="dark: dark;"
+                    data-icon="octicon-star" target=”_blank” data-size="large" data-show-count="true"
+                    aria-label="Star rustic-rs/rustic on GitHub">Star</a>
+                <a class="github-button" href="https://github.com/rustic-rs/rustic/fork" data-color-scheme="dark: dark;"
+                    target=”_blank” data-size="large" data-show-count="true"
+                    aria-label="Fork rustic-rs/rustic on GitHub">Fork</a>
+            </div>
+            <div class="explore-more text"
+                onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+                Read More ⇩
+            </div>
+        </section>
+        
+        <section class="main-content">
+            
+            
+            
+            
+            
+            
+            <div class="toc">
+                <div class="toc-sticky">
+                    
+                    <div class="toc-item">
+                        <a class="subtext" href="https://rustic.cli.rs/#ecosystem">Ecosystem</a>
+                    </div>
+                    
+                    
+                    <div class="toc-item">
+                        <a class="subtext" href="https://rustic.cli.rs/#contributing">Contributing</a>
+                    </div>
+                    
+                    
+                    <div class="toc-item">
+                        <a class="subtext" href="https://rustic.cli.rs/#stability">Stability</a>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+            
+
+            <div class="content text" id="features">
+                
+                <div class="heading-text">Overview</div>
+                <h1 id="ecosystem">Ecosystem</h1>
+<p>The <em>rustic</em> ecosystem currently consists of the following products:</p>
+<div class="flex-row">
+    
+    <a href="ecosystem&#x2F;rustic">
+        <div class="ecosystem-gallery">
+            <img src="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;rustic-rs&#x2F;assets&#x2F;main&#x2F;logos&#x2F;readme_header.png" />
+            <div class="desc">rustic</div>
+            
+            <div class="desc-sub">deduplicated, encrypted backups</div>
+            
+        </div>
+    </a>
+    
+    <a href="ecosystem&#x2F;rustic-core">
+        <div class="ecosystem-gallery">
+            <img src="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;rustic-rs&#x2F;assets&#x2F;main&#x2F;logos&#x2F;readme_header_core.png" />
+            <div class="desc">rustic core</div>
+            
+            <div class="desc-sub">the library powering rustic</div>
+            
+        </div>
+    </a>
+    
+    <a href="ecosystem&#x2F;rustic-scheduler">
+        <div class="ecosystem-gallery">
+            <img src="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;rustic-rs&#x2F;assets&#x2F;main&#x2F;logos&#x2F;readme_header_scheduler.png" />
+            <div class="desc">rustic scheduler</div>
+            
+            <div class="desc-sub">centrally schedule rustic backups</div>
+            
+        </div>
+    </a>
+    
+    <a href="ecosystem&#x2F;rustic-server">
+        <div class="ecosystem-gallery">
+            <img src="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;rustic-rs&#x2F;assets&#x2F;main&#x2F;logos&#x2F;readme_header_server.png" />
+            <div class="desc">rustic server</div>
+            
+            <div class="desc-sub">REST server for rustic and restic</div>
+            
+        </div>
+    </a>
+    
+</div><h1 id="contributing">Contributing</h1>
+<p>Tried tools from our ecosystem and not satisfied? Don't just walk away! You can help:</p>
+<ul>
+<li>You can report issues or suggest new features on our
+<a href="https://discord.gg/WRUWENZnzQ">Discord server</a> or using
+<a href="https://github.com/rustic-rs/rustic/issues/new/choose">Github Issues</a>!</li>
+</ul>
+<p>Do you know how to code or got an idea for an improvement? Don't keep it to
+yourself!</p>
+<ul>
+<li><a href="https://github.com/rustic-rs/rustic/contribute">Contribute fixes</a> or new
+features via a pull requests!</li>
+</ul>
+<p>Please make sure, that you read the
+<a href="https://rustic.cli.rs/docs/contributing-to-rustic.html">contribution guide</a>.</p>
+<h1 id="stability">Stability</h1>
+<p>Currently our tools are in beta state and miss regression tests. It is not recommended to use them in production backups, yet.</p>
+
+                
+            </div>
+
+            
+            
+            
+        </section>
+    </main>
+
+
+    
+    <footer>
+        <div class="subtext">
+            <a href="https://github.com/rustic-rs">rustic © 2023</a>
+        </div>
+        <div class="remark">
+            <a href="https://github.com/huhu/juice" target="_blank">Based on Juice theme</a>
+        </div>
+    </footer>
+    
+</body>
+<script>
+    const scrollHandler = entries => {
+        // Find the first entry which intersecting and ratio > 0.9 to highlight.
+        let entry = entries.find(entry => {
+            return entry.isIntersecting && entry.intersectionRatio > 0.9;
+        });
+        if (!entry) return;
+
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+
+        // let url = new URL(`#${entry.target.id}`);
+        let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
+        if (link) {
+            link.classList.add("active");
+            link.scrollIntoView({ behavior: "auto", block: "nearest" });
+        }
+    };
+    // Set -100px root margin to improve highlight experience.
+    const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
+    let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    items.forEach(item => observer.observe(item));
+</script>
+
+</html>

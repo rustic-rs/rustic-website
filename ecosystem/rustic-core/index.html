@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>rustic_core | rustic - fast, encrypted, and deduplicated backups </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="icon" type="image/svg" href="https://rustic.cli.rs/assets/rustic.svg">
+    
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #FEB33F;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        --primary-text-color-over: #000;
+        /* Primary theme link color */
+        --primary-link-color: #d09a07;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #d46e13;
+        --toc-background-color: white;
+        --code-color: #4a4a4a;
+        --code-background-color: white;
+
+        --shadow-color: #7a7a7a;
+
+        /* Font used for headers (h1 & h2) */
+        --header-font-family: "Fira Sans", sans-serif;
+        /* Font used for text */
+        --text-font-family: "Fira Sans", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --primary-color: #382929;
+            --primary-text-color: #d7d7d7;
+            --primary-text-color-over: #FFF;
+            --primary-link-color: #9b9b9b;
+            --secondary-color: #282828;
+            --secondary-text-color: #f2f2f2;
+            --navbar-background-color-hover: #362525;
+            --toc-highlight-text-color: #f2f2f2;
+            --toc-background-color: #3a3a3a;
+            --code-color: black;
+            --code-background-color: white;
+
+            --shadow-color: #202020;
+            --header-font-family: "Fira Sans", sans-serif;
+            --text-font-family: "Fira Sans", sans-serif;
+        }
+    }
+</style>
+    
+    <link rel="stylesheet" href="https://rustic.cli.rs/fonts.css">
+    
+    <link rel="stylesheet" href="https://rustic.cli.rs/rustic.css">
+    <script async defer src="https://rustic.cli.rs/js/buttons.js"></script>
+    
+    
+</head>
+
+<body class="layout">
+    <header>
+        <div class="header-menu">
+            
+
+
+<div class="navbar-logo">
+    <a href="https://rustic.cli.rs/">
+        <img src="https://rustic.cli.rs/assets/rustic.svg" alt="logo" /> rustic
+    </a>
+</div>
+
+<nav>
+
+    <div class="menu-items">
+        
+        
+        
+        <div class="nav-item">
+            <a class="subtitle-text" href="https://rustic.cli.rs/learn/">
+                Learn
+            </a>
+        </div>
+        
+        
+        
+        
+        <div class="nav-item">
+            <a class="subtitle-text" href="https://rustic.cli.rs/community/">
+                Community
+            </a>
+        </div>
+        
+        
+        
+    </div>
+    <div class="menu-items-hamburger">
+        
+        
+        
+        <div class="nav-item">
+            <a class="subtitle-text" href="https://rustic.cli.rs/learn/">
+                Learn
+            </a>
+        </div>
+        
+        
+        
+        
+        <div class="nav-item">
+            <a class="subtitle-text" href="https://rustic.cli.rs/community/">
+                Community
+            </a>
+        </div>
+        
+        
+        
+    </div>
+    <div class="hamburger">
+        <div class="hamburg">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </div>
+    <script>
+        var hamburger = document.querySelector(".hamburg");
+        var hamburger_menu = document.querySelector(".hamburger");
+        var menu_items_hamburger = document.querySelector(".menu-items-hamburger");
+        hamburger_menu.onclick = function () {
+            hamburger.classList.toggle("checked");
+            if (hamburger.classList.contains("checked")) {
+                menu_items_hamburger.setAttribute("style", "display: flex;");
+            } else {
+                menu_items_hamburger.setAttribute("style", "display: none;");
+            }
+        }
+    </script>
+
+</nav>
+
+
+        </div>
+
+    </header>
+    <main>
+        
+
+        <section class="main-content">
+            
+
+
+
+
+
+
+
+<div class="toc">
+    <div class="toc-sticky">
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://rustic.cli.rs/ecosystem/rustic-core/#about">About</a>
+        </div>
+        
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://rustic.cli.rs/ecosystem/rustic-core/#usage">Usage</a>
+        </div>
+        
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://rustic.cli.rs/ecosystem/rustic-core/#crate-features">Crate features</a>
+        </div>
+        
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://rustic.cli.rs/ecosystem/rustic-core/#examples">Examples</a>
+        </div>
+        
+        
+        <div class="toc-item-child">
+            <a class="subtext" href="https://rustic.cli.rs/ecosystem/rustic-core/#example-initializing-a-new-repository"><small>- Example: Initializing a new repository</small></a>
+        </div>
+        
+        <div class="toc-item-child">
+            <a class="subtext" href="https://rustic.cli.rs/ecosystem/rustic-core/#example-creating-a-new-snapshot"><small>- Example: Creating a new snapshot</small></a>
+        </div>
+        
+        <div class="toc-item-child">
+            <a class="subtext" href="https://rustic.cli.rs/ecosystem/rustic-core/#example-restoring-a-snapshot"><small>- Example: Restoring a snapshot</small></a>
+        </div>
+        
+        <div class="toc-item-child">
+            <a class="subtext" href="https://rustic.cli.rs/ecosystem/rustic-core/#example-checking-a-repository"><small>- Example: Checking a repository</small></a>
+        </div>
+        
+        
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://rustic.cli.rs/ecosystem/rustic-core/#minimum-rust-version-policy">Minimum Rust version policy</a>
+        </div>
+        
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://rustic.cli.rs/ecosystem/rustic-core/#license">License</a>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="content text">
+    
+    <div class="heading-text">rustic core</div>
+    <p>
+<img class="content-logo" src="https://raw.githubusercontent.com/rustic-rs/assets/main/logos/readme_header_core.png" />
+</p>
+<p><b>Library for fast, encrypted, and deduplicated backups</b></p>
+<p>
+<a href="https://crates.io/crates/rustic_core"><img src="https://img.shields.io/crates/v/rustic_core.svg" /></a>
+<a href="https://docs.rs/rustic_core/"><img src="https://img.shields.io/docsrs/rustic_core?style=flat&amp;labelColor=1c1d42&amp;color=4f396a&amp;logo=Rust&amp;logoColor=white" /></a>
+<a href="https://github.com/rustic-rs/rustic_core/blob/main/"><img src="https://img.shields.io/badge/license-Apache2.0/MIT-blue.svg" /></a>
+<a href="https://crates.io/crates/rustic_core"><img src="https://img.shields.io/crates/d/rustic_core.svg" /></a>
+<p>
+<h1 id="about">About</h1>
+<p>This library is powering <a href="https://crates.io/crates/rustic-rs">rustic-rs</a>. A
+backup tool that provides fast, encrypted, deduplicated backups. It reads and
+writes the <em>restic</em> repository format, which is described in their design
+document.</p>
+<p><strong>Note</strong>: <em>rustic_core</em> is in an early development stage and its API is subject
+to change in the next releases. If you want to give feedback on that, please
+open a thread in our
+<a href="https://github.com/rustic-rs/rustic/discussions">discussions</a>.</p>
+<h1 id="usage">Usage</h1>
+<p>Add this to your <code>Cargo.toml</code>:</p>
+<pre data-lang="toml" style="background-color:#ffffff;color:#323232;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[dependencies]
+</span><span style="color:#63a35c;">rustic_core </span><span>= </span><span style="color:#183691;">&quot;0.1&quot;
+</span></code></pre>
+<h1 id="crate-features">Crate features</h1>
+<p>This crate exposes a few features for controlling dependency usage:</p>
+<ul>
+<li><strong>cli</strong> - Enables support for CLI features by enabling <em>merge</em> and <em>clap</em>
+features. <em>This feature is disabled by default</em>.</li>
+<li><strong>merge</strong> - Enables support for merging multiple values into one, which
+enables the <em>merge</em> dependency. This is needed for parsing commandline
+arguments and merging them into one (e.g. <em>config</em>). <em>This feature is disabled
+by default</em>.</li>
+<li><strong>clap</strong> - Enables a dependency on the <em>clap</em> crate and enables parsing from
+the commandline. <em>This feature is disabled by default</em>.</li>
+</ul>
+<h1 id="examples">Examples</h1>
+<h2 id="example-initializing-a-new-repository">Example: Initializing a new repository</h2>
+<pre data-lang="rust" style="background-color:#ffffff;color:#323232;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="font-weight:bold;color:#a71d5d;">use </span><span>rustic_core::{ConfigOptions, KeyOptions, Repository, RepositoryOptions};
+</span><span style="font-weight:bold;color:#a71d5d;">use </span><span>simplelog::{Config, LevelFilter, SimpleLogger};
+</span><span style="font-weight:bold;color:#a71d5d;">use </span><span>std::error::Error;
+</span><span>
+</span><span style="font-weight:bold;color:#a71d5d;">fn </span><span style="font-weight:bold;color:#795da3;">main</span><span>() -&gt; </span><span style="color:#0086b3;">Result</span><span>&lt;(), </span><span style="color:#0086b3;">Box</span><span>&lt;dyn Error&gt;&gt; {
+</span><span>    </span><span style="font-style:italic;color:#969896;">// Display info logs
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let _ = </span><span>SimpleLogger::init(LevelFilter::Info, Config::default());
+</span><span>
+</span><span>    </span><span style="font-style:italic;color:#969896;">// Init repository
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> repo_opts </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>RepositoryOptions::default()
+</span><span>        .</span><span style="color:#62a35c;">repository</span><span>(</span><span style="color:#183691;">&quot;/tmp/repo&quot;</span><span>)
+</span><span>        .</span><span style="color:#62a35c;">password</span><span>(</span><span style="color:#183691;">&quot;test&quot;</span><span>);
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> key_opts </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>KeyOptions::default();
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> config_opts </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>ConfigOptions::default();
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> _repo </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>Repository::new(</span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span>repo_opts)</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>.</span><span style="color:#62a35c;">init</span><span>(</span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span>key_opts, </span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span>config_opts)</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>;
+</span><span>
+</span><span>    </span><span style="font-style:italic;color:#969896;">// -&gt; use _repo for any operation on an open repository
+</span><span>    </span><span style="color:#0086b3;">Ok</span><span>(())
+</span><span>}
+</span></code></pre>
+<h2 id="example-creating-a-new-snapshot">Example: Creating a new snapshot</h2>
+<pre data-lang="rust" style="background-color:#ffffff;color:#323232;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="font-weight:bold;color:#a71d5d;">use </span><span>rustic_core::{BackupOptions, PathList, Repository, RepositoryOptions, SnapshotOptions};
+</span><span style="font-weight:bold;color:#a71d5d;">use </span><span>simplelog::{Config, LevelFilter, SimpleLogger};
+</span><span style="font-weight:bold;color:#a71d5d;">use </span><span>std::error::Error;
+</span><span>
+</span><span style="font-weight:bold;color:#a71d5d;">fn </span><span style="font-weight:bold;color:#795da3;">main</span><span>() -&gt; </span><span style="color:#0086b3;">Result</span><span>&lt;(), </span><span style="color:#0086b3;">Box</span><span>&lt;dyn Error&gt;&gt; {
+</span><span>    </span><span style="font-style:italic;color:#969896;">// Display info logs
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let _ = </span><span>SimpleLogger::init(LevelFilter::Info, Config::default());
+</span><span>
+</span><span>    </span><span style="font-style:italic;color:#969896;">// Open repository
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> repo_opts </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>RepositoryOptions::default()
+</span><span>        .</span><span style="color:#62a35c;">repository</span><span>(</span><span style="color:#183691;">&quot;/tmp/repo&quot;</span><span>)
+</span><span>        .</span><span style="color:#62a35c;">password</span><span>(</span><span style="color:#183691;">&quot;test&quot;</span><span>);
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> repo </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>Repository::new(</span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span>repo_opts)</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>.</span><span style="color:#62a35c;">open</span><span>()</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>.</span><span style="color:#62a35c;">to_indexed_ids</span><span>()</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>;
+</span><span>
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> backup_opts </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>BackupOptions::default();
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> source </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>PathList::from_string(</span><span style="color:#183691;">&quot;.&quot;</span><span>)</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>.</span><span style="color:#62a35c;">sanitize</span><span>()</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>;
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> snap </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>SnapshotOptions::default()
+</span><span>        .</span><span style="color:#62a35c;">add_tags</span><span>(</span><span style="color:#183691;">&quot;tag1,tag2&quot;</span><span>)</span><span style="font-weight:bold;color:#a71d5d;">?
+</span><span>        .</span><span style="color:#62a35c;">to_snapshot</span><span>()</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>;
+</span><span>
+</span><span>    </span><span style="font-style:italic;color:#969896;">// Create snapshot
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> snap </span><span style="font-weight:bold;color:#a71d5d;">=</span><span> repo.</span><span style="color:#62a35c;">backup</span><span>(</span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span>backup_opts, source, snap)</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>;
+</span><span>
+</span><span>    println!(</span><span style="color:#183691;">&quot;successfully created snapshot:</span><span style="color:#0086b3;">\n{snap:#?}</span><span style="color:#183691;">&quot;</span><span>);
+</span><span>    </span><span style="color:#0086b3;">Ok</span><span>(())
+</span><span>}
+</span></code></pre>
+<h2 id="example-restoring-a-snapshot">Example: Restoring a snapshot</h2>
+<pre data-lang="rust" style="background-color:#ffffff;color:#323232;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="font-weight:bold;color:#a71d5d;">use </span><span>rustic_core::{LocalDestination, LsOptions, Repository, RepositoryOptions, RestoreOptions};
+</span><span style="font-weight:bold;color:#a71d5d;">use </span><span>simplelog::{Config, LevelFilter, SimpleLogger};
+</span><span style="font-weight:bold;color:#a71d5d;">use </span><span>std::error::Error;
+</span><span>
+</span><span style="font-weight:bold;color:#a71d5d;">fn </span><span style="font-weight:bold;color:#795da3;">main</span><span>() -&gt; </span><span style="color:#0086b3;">Result</span><span>&lt;(), </span><span style="color:#0086b3;">Box</span><span>&lt;dyn Error&gt;&gt; {
+</span><span>    </span><span style="font-style:italic;color:#969896;">// Display info logs
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let _ = </span><span>SimpleLogger::init(LevelFilter::Info, Config::default());
+</span><span>
+</span><span>    </span><span style="font-style:italic;color:#969896;">// Open repository
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> repo_opts </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>RepositoryOptions::default()
+</span><span>        .</span><span style="color:#62a35c;">repository</span><span>(</span><span style="color:#183691;">&quot;/tmp/repo&quot;</span><span>)
+</span><span>        .</span><span style="color:#62a35c;">password</span><span>(</span><span style="color:#183691;">&quot;test&quot;</span><span>);
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> repo </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>Repository::new(</span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span>repo_opts)</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>.</span><span style="color:#62a35c;">open</span><span>()</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>.</span><span style="color:#62a35c;">to_indexed</span><span>()</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>;
+</span><span>
+</span><span>    </span><span style="font-style:italic;color:#969896;">// use latest snapshot without filtering snapshots
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> node </span><span style="font-weight:bold;color:#a71d5d;">=</span><span> repo.</span><span style="color:#62a35c;">node_from_snapshot_path</span><span>(</span><span style="color:#183691;">&quot;latest&quot;</span><span>, |_| </span><span style="color:#0086b3;">true</span><span>)</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>;
+</span><span>
+</span><span>    </span><span style="font-style:italic;color:#969896;">// use list of the snapshot contents using no additional filtering
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> streamer_opts </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>LsOptions::default();
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> ls </span><span style="font-weight:bold;color:#a71d5d;">=</span><span> repo.</span><span style="color:#62a35c;">ls</span><span>(</span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span>node, </span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span>streamer_opts)</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>;
+</span><span>
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> destination </span><span style="font-weight:bold;color:#a71d5d;">= </span><span style="color:#183691;">&quot;./restore/&quot;</span><span>; </span><span style="font-style:italic;color:#969896;">// restore to this destination dir
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> create </span><span style="font-weight:bold;color:#a71d5d;">= </span><span style="color:#0086b3;">true</span><span>; </span><span style="font-style:italic;color:#969896;">// create destination dir, if it doesn&#39;t exist
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> dest </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>LocalDestination::new(destination, create, </span><span style="font-weight:bold;color:#a71d5d;">!</span><span>node.</span><span style="color:#62a35c;">is_dir</span><span>())</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>;
+</span><span>
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> opts </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>RestoreOptions::default();
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> dry_run </span><span style="font-weight:bold;color:#a71d5d;">= </span><span style="color:#0086b3;">false</span><span>;
+</span><span>    </span><span style="font-style:italic;color:#969896;">// create restore infos. Note: this also already creates needed dirs in the destination
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> restore_infos </span><span style="font-weight:bold;color:#a71d5d;">=</span><span> repo.</span><span style="color:#62a35c;">prepare_restore</span><span>(</span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span>opts, ls.</span><span style="color:#62a35c;">clone</span><span>(), </span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span>dest, dry_run)</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>;
+</span><span>
+</span><span>    repo.</span><span style="color:#62a35c;">restore</span><span>(restore_infos, </span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span>opts, ls, </span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span>dest)</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>;
+</span><span>    </span><span style="color:#0086b3;">Ok</span><span>(())
+</span><span>}
+</span></code></pre>
+<h2 id="example-checking-a-repository">Example: Checking a repository</h2>
+<pre data-lang="rust" style="background-color:#ffffff;color:#323232;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="font-weight:bold;color:#a71d5d;">use </span><span>rustic_core::{CheckOptions, Repository, RepositoryOptions};
+</span><span style="font-weight:bold;color:#a71d5d;">use </span><span>simplelog::{Config, LevelFilter, SimpleLogger};
+</span><span style="font-weight:bold;color:#a71d5d;">use </span><span>std::error::Error;
+</span><span>
+</span><span style="font-weight:bold;color:#a71d5d;">fn </span><span style="font-weight:bold;color:#795da3;">main</span><span>() -&gt; </span><span style="color:#0086b3;">Result</span><span>&lt;(), </span><span style="color:#0086b3;">Box</span><span>&lt;dyn Error&gt;&gt; {
+</span><span>    </span><span style="font-style:italic;color:#969896;">// Display info logs
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let _ = </span><span>SimpleLogger::init(LevelFilter::Info, Config::default());
+</span><span>
+</span><span>    </span><span style="font-style:italic;color:#969896;">// Open repository
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> repo_opts </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>RepositoryOptions::default()
+</span><span>        .</span><span style="color:#62a35c;">repository</span><span>(</span><span style="color:#183691;">&quot;/tmp/repo&quot;</span><span>)
+</span><span>        .</span><span style="color:#62a35c;">password</span><span>(</span><span style="color:#183691;">&quot;test&quot;</span><span>);
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> repo </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>Repository::new(</span><span style="font-weight:bold;color:#a71d5d;">&amp;</span><span>repo_opts)</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>.</span><span style="color:#62a35c;">open</span><span>()</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>;
+</span><span>
+</span><span>    </span><span style="font-style:italic;color:#969896;">// Check repository with standard options but omitting cache checks
+</span><span>    </span><span style="font-weight:bold;color:#a71d5d;">let</span><span> opts </span><span style="font-weight:bold;color:#a71d5d;">= </span><span>CheckOptions::default().</span><span style="color:#62a35c;">trust_cache</span><span>(</span><span style="color:#0086b3;">true</span><span>);
+</span><span>    repo.</span><span style="color:#62a35c;">check</span><span>(opts)</span><span style="font-weight:bold;color:#a71d5d;">?</span><span>;
+</span><span>    </span><span style="color:#0086b3;">Ok</span><span>(())
+</span><span>}
+</span></code></pre>
+<h1 id="minimum-rust-version-policy">Minimum Rust version policy</h1>
+<p>This crate's minimum supported <code>rustc</code> version is <code>1.68.2</code>.</p>
+<p>The current policy is that the minimum Rust version required to use this crate
+can be increased in minor version updates. For example, if <code>crate 1.0</code> requires
+Rust 1.20.0, then <code>crate 1.0.z</code> for all values of <code>z</code> will also require Rust
+1.20.0 or newer. However, <code>crate 1.y</code> for <code>y &gt; 0</code> may require a newer minimum
+version of Rust.</p>
+<p>In general, this crate will be conservative with respect to the minimum
+supported version of Rust.</p>
+<h1 id="license">License</h1>
+<p>Licensed under either of:</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/rustic-rs/rustic_scheduler/main/LICENSE-APACHE">Apache License, Version 2.0</a></li>
+<li><a href="https://raw.githubusercontent.com/rustic-rs/rustic_scheduler/main/LICENSE-MIT">MIT license</a></li>
+</ul>
+
+    
+</div>
+
+        </section>
+    </main>
+
+
+    
+    <footer>
+        <div class="subtext">
+            <a href="https://github.com/rustic-rs">rustic © 2023</a>
+        </div>
+        <div class="remark">
+            <a href="https://github.com/huhu/juice" target="_blank">Based on Juice theme</a>
+        </div>
+    </footer>
+    
+</body>
+<script>
+    const scrollHandler = entries => {
+        // Find the first entry which intersecting and ratio > 0.9 to highlight.
+        let entry = entries.find(entry => {
+            return entry.isIntersecting && entry.intersectionRatio > 0.9;
+        });
+        if (!entry) return;
+
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+
+        // let url = new URL(`#${entry.target.id}`);
+        let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
+        if (link) {
+            link.classList.add("active");
+            link.scrollIntoView({ behavior: "auto", block: "nearest" });
+        }
+    };
+    // Set -100px root margin to improve highlight experience.
+    const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
+    let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    items.forEach(item => observer.observe(item));
+</script>
+
+</html>

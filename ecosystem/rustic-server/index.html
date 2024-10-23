@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>rustic_server | rustic - fast, encrypted, and deduplicated backups </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="icon" type="image/svg" href="https://rustic.cli.rs/assets/rustic.svg">
+    
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #FEB33F;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        --primary-text-color-over: #000;
+        /* Primary theme link color */
+        --primary-link-color: #d09a07;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #d46e13;
+        --toc-background-color: white;
+        --code-color: #4a4a4a;
+        --code-background-color: white;
+
+        --shadow-color: #7a7a7a;
+
+        /* Font used for headers (h1 & h2) */
+        --header-font-family: "Fira Sans", sans-serif;
+        /* Font used for text */
+        --text-font-family: "Fira Sans", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --primary-color: #382929;
+            --primary-text-color: #d7d7d7;
+            --primary-text-color-over: #FFF;
+            --primary-link-color: #9b9b9b;
+            --secondary-color: #282828;
+            --secondary-text-color: #f2f2f2;
+            --navbar-background-color-hover: #362525;
+            --toc-highlight-text-color: #f2f2f2;
+            --toc-background-color: #3a3a3a;
+            --code-color: black;
+            --code-background-color: white;
+
+            --shadow-color: #202020;
+            --header-font-family: "Fira Sans", sans-serif;
+            --text-font-family: "Fira Sans", sans-serif;
+        }
+    }
+</style>
+    
+    <link rel="stylesheet" href="https://rustic.cli.rs/fonts.css">
+    
+    <link rel="stylesheet" href="https://rustic.cli.rs/rustic.css">
+    <script async defer src="https://rustic.cli.rs/js/buttons.js"></script>
+    
+    
+</head>
+
+<body class="layout">
+    <header>
+        <div class="header-menu">
+            
+
+
+<div class="navbar-logo">
+    <a href="https://rustic.cli.rs/">
+        <img src="https://rustic.cli.rs/assets/rustic.svg" alt="logo" /> rustic
+    </a>
+</div>
+
+<nav>
+
+    <div class="menu-items">
+        
+        
+        
+        <div class="nav-item">
+            <a class="subtitle-text" href="https://rustic.cli.rs/learn/">
+                Learn
+            </a>
+        </div>
+        
+        
+        
+        
+        <div class="nav-item">
+            <a class="subtitle-text" href="https://rustic.cli.rs/community/">
+                Community
+            </a>
+        </div>
+        
+        
+        
+    </div>
+    <div class="menu-items-hamburger">
+        
+        
+        
+        <div class="nav-item">
+            <a class="subtitle-text" href="https://rustic.cli.rs/learn/">
+                Learn
+            </a>
+        </div>
+        
+        
+        
+        
+        <div class="nav-item">
+            <a class="subtitle-text" href="https://rustic.cli.rs/community/">
+                Community
+            </a>
+        </div>
+        
+        
+        
+    </div>
+    <div class="hamburger">
+        <div class="hamburg">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </div>
+    <script>
+        var hamburger = document.querySelector(".hamburg");
+        var hamburger_menu = document.querySelector(".hamburger");
+        var menu_items_hamburger = document.querySelector(".menu-items-hamburger");
+        hamburger_menu.onclick = function () {
+            hamburger.classList.toggle("checked");
+            if (hamburger.classList.contains("checked")) {
+                menu_items_hamburger.setAttribute("style", "display: flex;");
+            } else {
+                menu_items_hamburger.setAttribute("style", "display: none;");
+            }
+        }
+    </script>
+
+</nav>
+
+
+        </div>
+
+    </header>
+    <main>
+        
+
+        <section class="main-content">
+            
+
+
+
+
+
+
+
+<div class="toc">
+    <div class="toc-sticky">
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://rustic.cli.rs/ecosystem/rustic-server/#about">About</a>
+        </div>
+        
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://rustic.cli.rs/ecosystem/rustic-server/#installation">Installation</a>
+        </div>
+        
+        
+        <div class="toc-item-child">
+            <a class="subtext" href="https://rustic.cli.rs/ecosystem/rustic-server/#from-binaries"><small>- From binaries</small></a>
+        </div>
+        
+        
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://rustic.cli.rs/ecosystem/rustic-server/#features">Features</a>
+        </div>
+        
+        
+        <div class="toc-item">
+            <a class="subtext" href="https://rustic.cli.rs/ecosystem/rustic-server/#license">License</a>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="content text">
+    
+    <div class="heading-text">rustic server</div>
+    <p>
+<img class="content-logo" src="https://raw.githubusercontent.com/rustic-rs/assets/main/logos/readme_header_server.png" />
+</p>
+<p><b>REST server for rustic</b></p>
+<!-- <p>
+<a href="https://crates.io/crates/rustic-rs"><img src="https://img.shields.io/crates/v/rustic-rs.svg" /></a>
+<a href="https://docs.rs/rustic-rs/"><img src="https://img.shields.io/docsrs/rustic-rs?style=flat&amp;labelColor=1c1d42&amp;color=4f396a&amp;logo=Rust&amp;logoColor=white" /></a>
+<a href="https://raw.githubusercontent.com/rustic-rs/rustic/main/"><img src="https://img.shields.io/badge/license-Apache2.0/MIT-blue.svg" /></a>
+<a href="https://crates.io/crates/rustic-rs"><img src="https://img.shields.io/crates/d/rustic-rs.svg" /></a>
+<p> -->
+<p>
+<a href="https://github.com/rustic-rs/rustic_server/actions/workflows/nightly.yml"><img src="https://github.com/rustic-rs/rustic_server/actions/workflows/nightly.yml/badge.svg" /></a>
+<a href="https://www.gnu.org/licenses/agpl.txt"><img src="https://www.gnu.org/graphics/agplv3-88x31.png" height="20"/></a>
+</p>
+<h1 id="about">About</h1>
+<p>A REST server built in rust for use with rustic and restic.</p>
+<p>Works pretty similar to <a href="https://github.com/restic/rest-server">rest-server</a>.
+Most features are already implemented.</p>
+<h1 id="installation">Installation</h1>
+<h2 id="from-binaries">From binaries</h2>
+<p><em>rustic-server</em> is in an early development stage. Please use the nightly builds from <a href="https://rustic.cli.rs/docs/nightly_builds.html">here</a>.</p>
+<h1 id="features">Features</h1>
+<p>Allows to give ACLs im TOML format, use option <code>--acl</code></p>
+<p>Example TOML file:</p>
+<pre data-lang="toml" style="background-color:#ffffff;color:#323232;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="font-style:italic;color:#969896;"># default sets ACL for the repo without explicit path
+</span><span style="font-style:italic;color:#969896;"># (and for the repo under path &quot;default&quot;, if exists)
+</span><span>[default]
+</span><span style="color:#63a35c;">alex </span><span>= </span><span style="color:#183691;">&quot;Read&quot;
+</span><span style="color:#63a35c;">admin </span><span>= </span><span style="color:#183691;">&quot;Modify&quot;
+</span><span>
+</span><span>[alex]
+</span><span style="color:#63a35c;">alex </span><span>= </span><span style="color:#183691;">&quot;Modify&quot;
+</span><span style="color:#63a35c;">bob </span><span>= </span><span style="color:#183691;">&quot;Append&quot;
+</span></code></pre>
+<h1 id="license">License</h1>
+<p><code>rustic-server</code> is open-sourced software licensed under the
+<a href="https://raw.githubusercontent.com/rustic-rs/rustic_server/main/LICENSE">GNU Affero General Public License v3.0 or later</a>.</p>
+
+    
+</div>
+
+        </section>
+    </main>
+
+
+    
+    <footer>
+        <div class="subtext">
+            <a href="https://github.com/rustic-rs">rustic © 2023</a>
+        </div>
+        <div class="remark">
+            <a href="https://github.com/huhu/juice" target="_blank">Based on Juice theme</a>
+        </div>
+    </footer>
+    
+</body>
+<script>
+    const scrollHandler = entries => {
+        // Find the first entry which intersecting and ratio > 0.9 to highlight.
+        let entry = entries.find(entry => {
+            return entry.isIntersecting && entry.intersectionRatio > 0.9;
+        });
+        if (!entry) return;
+
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+
+        // let url = new URL(`#${entry.target.id}`);
+        let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
+        if (link) {
+            link.classList.add("active");
+            link.scrollIntoView({ behavior: "auto", block: "nearest" });
+        }
+    };
+    // Set -100px root margin to improve highlight experience.
+    const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
+    let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    items.forEach(item => observer.observe(item));
+</script>
+
+</html>

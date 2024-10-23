@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://rustic.cli.rs/</loc>
+    </url>
+    <url>
+        <loc>https://rustic.cli.rs/community/</loc>
+    </url>
+    <url>
+        <loc>https://rustic.cli.rs/ecosystem/rustic-core/</loc>
+    </url>
+    <url>
+        <loc>https://rustic.cli.rs/ecosystem/rustic-scheduler/</loc>
+    </url>
+    <url>
+        <loc>https://rustic.cli.rs/ecosystem/rustic-server/</loc>
+    </url>
+    <url>
+        <loc>https://rustic.cli.rs/ecosystem/rustic/</loc>
+    </url>
+    <url>
+        <loc>https://rustic.cli.rs/learn/</loc>
+    </url>
+</urlset>
